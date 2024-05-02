@@ -2,7 +2,6 @@ package com.example.CCMS.repositories;
 
 
 import com.example.CCMS.models.AgentModel;
-import org.aspectj.weaver.loadtime.Agent;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
