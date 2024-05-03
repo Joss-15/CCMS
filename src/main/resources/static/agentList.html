@@ -89,13 +89,12 @@
 
 
     function deleteAgent(button){
-        var row = button.parentNode.parentNode; // Obtiene la fila que contiene el botón
-        var agentId = row.querySelector('td:first-child').textContent; // Obtiene el ID del estudiante de la primera celda de la fila
+        var row = button.parentNode.parentNode;
+        var agentId = row.querySelector('td:first-child').textContent;
         buttonId = button.getAttribute('id');
         console.log(buttonId);
 
 
-        // Elimina el estudiante de la base de datos a través de la API
         fetch(url + "/delete/id?id=" + agentId, {
             method: 'DELETE'
         })
@@ -103,7 +102,6 @@
             if (!response.ok) {
                 throw new Error('Error al eliminar el agente');
             }
-            // Elimina la fila de la tabla en la interfaz de usuario después de eliminar el estudiante de la base de datos
             row.parentNode.removeChild(row);
             console.log('Agente eliminado exitosamente');
             alert("Se eliminó al agente exitosamente");
