@@ -1,14 +1,16 @@
 package com.example.CCMS.services;
 
-import com.example.CCMS.models.AgentModel;
-import com.example.CCMS.repositories.AgentRepository;
-import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.CCMS.models.AgentModel;
+import com.example.CCMS.repositories.AgentRepository;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class AgentService {
@@ -18,7 +20,7 @@ public class AgentService {
 
     public ArrayList<AgentModel> getAllAgents() { return (ArrayList<AgentModel>) AgentRepository.findAll(); }
 
-    public AgentModel saveStudent(AgentModel student){
+    public AgentModel saveAgent(AgentModel student){
         String searchCode = student.getCode();
         if(AgentRepository.findByCode(searchCode).isEmpty()){
             return AgentRepository.save(student);
@@ -36,17 +38,17 @@ public class AgentService {
         return AgentRepository.findByCode(code);
     }
 
-    public AgentModel editAgent(Long id, AgentModel student){
+    public AgentModel editAgent(Long id, AgentModel agent){
 
         AgentModel existingAgent = AgentRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Agent not found with id: " + id));
 
-        existingAgent.setCode(student.getCode());
-        existingAgent.setName(student.getName());
-        existingAgent.setSupervisor(student.getSupervisor());
-        existingAgent.setAcm(student.getAcm());
-        existingAgent.setLob(student.getLob());
-        existingAgent.setTenure(student.getTenure());
+        existingAgent.setCode(agent.getCode());
+        existingAgent.setName(agent.getName());
+        existingAgent.setSupervisor(agent.getSupervisor());
+        existingAgent.setAcm(agent.getAcm());
+        existingAgent.setLob(agent.getLob());
+        existingAgent.setTenure(agent.getTenure());
 
 
         return AgentRepository.save(existingAgent);
