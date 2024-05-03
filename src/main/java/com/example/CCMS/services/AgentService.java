@@ -20,10 +20,10 @@ public class AgentService {
 
     public ArrayList<AgentModel> getAllAgents() { return (ArrayList<AgentModel>) AgentRepository.findAll(); }
 
-    public AgentModel saveAgent(AgentModel student){
-        String searchCode = student.getCode();
+    public AgentModel saveAgent(AgentModel agent){
+        String searchCode = agent.getCode();
         if(AgentRepository.findByCode(searchCode).isEmpty()){
-            return AgentRepository.save(student);
+            return AgentRepository.save(agent);
         } else{
             return null;
 

@@ -25,15 +25,15 @@ public class AgentController {
     AgentService AgentService;
 
     @GetMapping()
-    public ArrayList<AgentModel> getAllStudents(){ return AgentService.getAllAgents(); }
+    public ArrayList<AgentModel> getAllAgents(){ return AgentService.getAllAgents(); }
 
     @GetMapping("/id/{id}")
-    public Optional<AgentModel> getStudentById(@PathVariable Long id){
+    public Optional<AgentModel> getAgentById(@PathVariable Long id){
         return AgentService.findById(id);
     }
 
     @GetMapping("/code/{code}")
-    public Optional<AgentModel> getStudentByCode(@PathVariable String code){ return AgentService.findByCode(code); }
+    public Optional<AgentModel> getAgentByCode(@PathVariable String code){ return AgentService.findByCode(code); }
 
     @PostMapping()
     public AgentModel saveAgent(@RequestBody AgentModel agent){
