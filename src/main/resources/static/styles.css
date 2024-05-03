@@ -50,3 +50,37 @@ button:not([disabled]):active {
     padding: 12px 50px;
   }
 }
+
+@import url('https://fonts.cdnfonts.com/css/caviar-dreams');
+table {
+    border-collapse: collapse; /* Para evitar espacios entre celdas */
+    background-color: #e6e6e6;
+    width: 100%; /* Ancho completo de la tabla */
+}
+td {
+    font-family: 'Trebuchet MS';
+    border: 1px solid black; /* Borde de 1 píxel de ancho, sólido y de color negro */
+    padding: 8px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto */
+}
+th {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: 1px solid black; /* Borde de 1 píxel de ancho, sólido y de color negro */
+    padding: 8px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto */
+}
+input {
+    font-style: italic;
+    height: 40px;
+    margin: 0 5px 10px 0;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+
+input:focus {
+  box-shadow: #000 4px 4px 0 0,#000 4px 4px 0 1px;
+  outline: none; /* Elimina el borde de enfoque predeterminado */
+}
